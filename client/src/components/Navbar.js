@@ -163,7 +163,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: '#e6005c' }}>
         <Toolbar>
           <IconButton
             edge="start"
