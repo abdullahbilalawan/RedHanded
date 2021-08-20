@@ -1,11 +1,28 @@
-const express = require('express'); 
-const app = express(); 
+// IMPORTS
+const express = require("express");
+const app = express();
 const port = process.env.PORT || 5000;
+const bodyParser = require("body-parser");
+const routes = require("./routes");
 
-// This displays message that the server running and listening to specified port
-app.listen(port, () => console.log(`Listening on port ${port}`)); 
+// MONGODB CONNECTION
+var mongoose = require("mongoose");
+mongoose
+  .connect(
+    "mongodb+srv://Abdullah:babyone@cluster0.isbql.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    { useNewUrlParser: true }
+  )
+  .then(() => {
+    const app = express();
+    // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
+    app.all("*", function (req, res, next) {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "X-Requested-With");
+      next();
+    });
+	app.use("/api", routes); // API
 
-// create a GET route
-app.get('/', (req, res) => { 
-  res.send('backend is working fine'); //Line 10
-}); 
+    app.listen(5000, () => {
+      console.log("LISTENING ON PORT 5000");
+    });
+  });
