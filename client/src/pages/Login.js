@@ -1,4 +1,3 @@
-import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -12,13 +11,17 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useRef } from "react";
+import { login } from "../actions/auth";
+import { Redirect } from "react-router-dom";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Red Handed
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -46,8 +49,50 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LogIn() {
+export default function LogIn(props) {
   const classes = useStyles();
+  const form = useRef();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { message } = useSelector((state) => state.message);
+  const dispatch = useDispatch();
+
+  const onChangeUsername = (e) => {
+    const username = e.target.value;
+    setUsername(username);
+  };
+
+  const onChangePassword = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    if (loading) {
+      dispatch(login(username, password))
+        .then(() => {
+          props.history.push("/");
+          window.location.reload();
+        })
+        .catch(() => {
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+    }
+  };
+
+  if (isLoggedIn) {
+    // Redirect to home page if already logged in
+    return <Redirect to="/" />;
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -70,6 +115,8 @@ export default function LogIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={username}
+            onChange={onChangeUsername}
           />
           <TextField
             variant="outlined"
@@ -81,6 +128,8 @@ export default function LogIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={onChangePassword}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}

@@ -13,6 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useState, useRef } from "react";
+import { register } from "../actions/auth";
 
 function Copyright() {
   return (
@@ -48,14 +49,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Register() {
-  // REACT HOOKS 
+  const checkBtn = useRef();
+  // REACT HOOKS
   const classes = useStyles();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [successful, setSuccessful] = useState(false);
+  const [successful, setSuccessful] = useState("");
 
-  const { message } = useSelector(state => state.message);
+  const { message } = useSelector((state) => state.message);
   const dispatch = useDispatch();
 
   const onChangeUsername = (e) => {
@@ -75,21 +77,22 @@ export default function Register() {
   const handleRegister = (e) => {
     e.preventDefault();
 
-    setSuccessful(false);
+    setSuccessful(true);
 
-    form.current.validateAll();
+    
 
-    if (true) {
+    if (successful) {
+      console.log('function is calling')
       dispatch(register(username, email, password))
-        .then(() => {
-          setSuccessful(true);
+        .then((res) => {
+          setSuccessful(res);
+
         })
         .catch(() => {
           setSuccessful(false);
         });
     }
   };
-
 
   return (
     <Container component="main" maxWidth="xs">
@@ -99,9 +102,9 @@ export default function Register() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Register
+          Admin Register
         </Typography>
-        <form className={classes.form} noValidate onsubmit={handleRegister}>
+        <form className={classes.form} noValidate onSubmit={handleRegister}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -158,7 +161,7 @@ export default function Register() {
             color="primary"
             className={classes.submit}
           >
-           Click here to Register
+            Click here to Register
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
@@ -172,7 +175,7 @@ export default function Register() {
       <Box mt={5}>
         <Copyright />
       </Box>
-      <Typography>{message}</Typography>
+      
     </Container>
   );
 }

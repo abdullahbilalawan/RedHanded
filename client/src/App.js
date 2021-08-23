@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Router, Switch, Route, Link } from "react-router-dom";
+import {history} from './helpers/history'
 
 import Typography from "@material-ui/core/Typography";
 import Homepage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { Route, Switch} from "react-router-dom";
+import { logout } from "./actions/auth";
+import { clearMessage } from "./actions/message";
+
 
 function App() {
+  const [showAdminBoard, setShowAdminBoard] = useState(false);
+
+  const { user: currentUser } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const logOut = () => {
+    dispatch(logout());
+  };
+
+
   return (
+    <Router history={history}>
     <div>
       <Navbar/>
         <Switch>
@@ -18,6 +33,7 @@ function App() {
         </Switch>
       
     </div>
+    </Router>
   );
 }
 

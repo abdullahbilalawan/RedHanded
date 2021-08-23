@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 const routes = require("./routes");
-
+const cors = require("cors");
 // MONGODB CONNECTION
 var mongoose = require("mongoose");
 mongoose
@@ -14,14 +14,12 @@ mongoose
   )
   .then(() => {
     const app = express();
+    app.use(cors())
     // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
-    app.all("*", function (req, res, next) {
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "X-Requested-With");
-      next();
-    });
-	app.use("/api", routes); // API
-
+    app.use(express.json());
+    
+    app.use("/api", routes); // API
+    
     app.listen(5000, () => {
       console.log("LISTENING ON PORT 5000");
     });
