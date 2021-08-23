@@ -15,6 +15,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -26,8 +27,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
+
     },
   },
+  
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -162,8 +165,8 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <div className={classes.grow}>
-      <AppBar position="static" style={{ background: '#e6005c' }}>
+    <div className={classes.grow} >
+      <AppBar  position="static" style={{ background: '#e6005c' }}>
         <Toolbar>
           <IconButton
             edge="start"

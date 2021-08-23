@@ -1,12 +1,23 @@
 import React from "react";
-
+import Baner from './Baner'
 
 const HomePage = () => {
   return (
-    <div className="homepage">
-      <h1>HomePage</h1>
-  
+    <>
+    <div className="homecontainer"></div>
+    <div className="homepage"> 
+    <Baner
+     title="Red Handed"
+     subtitle="Online investigation"/>
     </div>
+  
+   
+    
+   
+   
+      </>
+  
+   
   );
 };
 
