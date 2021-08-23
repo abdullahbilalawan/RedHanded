@@ -1,13 +1,13 @@
 const express = require("express")
 const router = express.Router()
-const User = require("./models/User")
 const Admin = require("./models/Admin")
 
-router.post("/registerUser", async (req, res) => {
-	const user = new User({
+router.post("/SignUp", async (req, res) => {
+	const admin = new Admin({
 		Name: req.body.name,
 		Email: req.body.email,
-		RollNo: req.body.rollNo,
+		Password: req.body.password,
+		
 	})
 	await user.save()
 	res.send(post)
