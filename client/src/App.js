@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Router, Switch, Route, Link } from "react-router-dom";
 import {history} from './helpers/history'
 
+import React from "react";
+import './App.css'
 import Typography from "@material-ui/core/Typography";
 import Homepage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
