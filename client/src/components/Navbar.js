@@ -14,7 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
+import AccountBoxSharpIcon from '@material-ui/icons/AccountBoxSharp';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: 'none',
+    flexGrow: 1,
     [theme.breakpoints.up('sm')]: {
       display: 'block',
 
@@ -89,6 +91,7 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -134,21 +137,21 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
+     <MenuItem>
+        <IconButton  color="inherit">
+          <Badge color="secondary">
+         <MailIcon/>
           </Badge>
         </IconButton>
-        <p>Messages</p>
-      </MenuItem>
+        <p>Register</p>
+     </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
+        <IconButton  color="inherit">
+          <Badge color="secondary">
             <NotificationsIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Login</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -179,7 +182,7 @@ export default function PrimarySearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Red Handed 
           </Typography>
-          <div className={classes.search}>
+          <div style={{marginLeft:"-300px"}} className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -191,19 +194,36 @@ export default function PrimarySearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
+              </div>
+        
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
+          <IconButton  color="inherit">
+              <Badge  color="secondary">
+               <h6>Home</h6>
               </Badge>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
+            <IconButton  color="inherit">
+              <Badge  color="secondary">
+               <h6>Contact</h6>
               </Badge>
             </IconButton>
+            <IconButton  color="inherit">
+              <Badge  color="secondary">
+               <h6>About Us</h6>
+              </Badge>
+            </IconButton>
+            <IconButton  color="inherit">
+              <Badge  color="secondary">
+              <Link style={{listStyle:"none",color:"white",fontSize:"16px",fontWeight:"bold"}} to ="/Login">Login</Link>
+              </Badge>
+            </IconButton>
+            <IconButton  color="inherit">
+              <Badge  color="secondary">
+              <Link style={{listStyle:"none",color:"white",fontSize:"16px",fontWeight:"bold"}} to ="/Register">Register</Link>
+              </Badge>
+            </IconButton>
+          
             <IconButton
               edge="end"
               aria-label="account of current user"

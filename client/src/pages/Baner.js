@@ -1,5 +1,5 @@
 import React from "react";
-const Banner = ({ children, title, subtitle }) => {
+const Baner = ({ children, title, subtitle }) => {
   return (
     <div className="banner">
        <div />
@@ -11,4 +11,4 @@ const Banner = ({ children, title, subtitle }) => {
   );
 };
 
-export default Banner;
+export default Baner;
