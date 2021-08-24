@@ -13,8 +13,10 @@ mongoose
   )
   .then(() => {
     const app = express();
+    
    
     app.use(cors())
+    app.use(express.json());
     app.use(function(req, res, next) {
       res.header(
         "Access-Control-Allow-Headers",
@@ -22,8 +24,8 @@ mongoose
       );
       next();
     });
-    // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
-    app.use(express.json());
+    
+    
     
     app.use("/api", routes); // API
     

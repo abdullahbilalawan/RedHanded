@@ -9,6 +9,7 @@ const { authJwt } = require("./middlewares");
 // REGISTER AND LOGIN ROUTES
 
 router.post("/signUp", async (req, res) => {
+  console.log(req.body)
   const admin = new Admin({
     Name: req.body.username,
     Email: req.body.email,
@@ -26,8 +27,9 @@ router.post("/signUp", async (req, res) => {
 });
 
 router.post('/signin', async (req, res) => {
+  console.log(req.body)
   Admin.findOne({
-    Name: req.body.username
+    Email: req.body.email
   })
     .exec((err, user) => {
       console.log(err, user);
@@ -39,14 +41,9 @@ router.post('/signin', async (req, res) => {
       if (!user) {
         return res.status(404).send({ message: "User Not found." });
       }
-
-      var passwordIsValid = bcrypt.compareSync(
-        req.body.password,
-        user.Password
-      ).then((res)=>{
-        console.log(res);
-
-      });
+      
+      var passwordIsValid =     req.body.password===user.Password
+    
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,
@@ -59,7 +56,7 @@ router.post('/signin', async (req, res) => {
       });
 
       
-      res.status(200).send({
+      res.send({
         id: user._id,
         username: user.username,
         email: user.email,
