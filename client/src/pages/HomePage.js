@@ -2,7 +2,7 @@ import React from "react";
 import Baner from "./Baner";
 
 const HomePage = (props) => {
-  console.log.apply(props.history);
+  
   return (
     <>
 
