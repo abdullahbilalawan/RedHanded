@@ -9,6 +9,7 @@ import './App.css'
 import Typography from "@material-ui/core/Typography";
 import Homepage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
+//import SideBar from "./components/SideBar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { logout } from "./actions/auth";
@@ -28,10 +29,13 @@ function App() {
   return (
     <Router history={history}>
     <div>
+   
       <Navbar/>
+     
+     
       
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          {/*<Route exact path="/" component={Homepage} />*/}
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Register" component={Register} />
         </Switch>
