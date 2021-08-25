@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useState, useRef } from "react";
 import { login } from "../actions/auth";
 import { Redirect } from "react-router-dom";
+import { alpha } from '@material-ui/core/styles'
 
 function Copyright() {
   return (
@@ -73,9 +74,7 @@ export default function LogIn(props) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    setLoading(true);
-    if (loading) {
+    if (true) {
       dispatch(login(username, password))
         .then(() => {
           props.history.push("/");
@@ -104,7 +103,7 @@ export default function LogIn(props) {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={handleLogin}>
           <TextField
             variant="outlined"
             margin="normal"

@@ -1,6 +1,5 @@
 // IMPORTS
 const express = require("express");
-const app = express();
 const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 const routes = require("./routes");
@@ -14,9 +13,19 @@ mongoose
   )
   .then(() => {
     const app = express();
+    
+   
     app.use(cors())
-    // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
     app.use(express.json());
+    app.use(function(req, res, next) {
+      res.header(
+        "Access-Control-Allow-Headers",
+        "x-access-token, Origin, Content-Type, Accept"
+      );
+      next();
+    });
+    
+    
     
     app.use("/api", routes); // API
     
