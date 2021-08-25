@@ -27,7 +27,6 @@ router.post("/signUp", async (req, res) => {
 });
 
 router.post('/signin', async (req, res) => {
-  console.log(req.body)
   Admin.findOne({
     Email: req.body.email
   })
@@ -58,8 +57,8 @@ router.post('/signin', async (req, res) => {
       
       res.send({
         id: user._id,
-        username: user.username,
-        email: user.email,
+        username: user.Name,
+        email: user.Email,
         accessToken: token
       });
     });
