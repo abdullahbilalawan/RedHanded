@@ -156,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     marginLeft: 216,
-    
+
    
   },
 }));
@@ -211,6 +211,7 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      
     </Menu>
   );
 
@@ -263,7 +264,7 @@ export default function PrimarySearchAppBar() {
       })}>
         <Toolbar>
          
-        <IconButton style={{marginLeft:"0px", marginBottom:"0px",width:"30px", height:"30px",background:"rgb(160, 39, 80)"}}
+        <IconButton position="static" style={{marginLeft:"0px", marginBottom:"0px",width:"30px", height:"30px",background:"rgb(160, 39, 80)"}}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
