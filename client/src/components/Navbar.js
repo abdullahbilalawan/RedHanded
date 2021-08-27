@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background:"rgb(160, 39, 80)",
+    background:"rgb(141, 16, 16)",
     color:"white"
   },
   drawerHeader: {
@@ -145,17 +145,25 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -24,
-    marginTop:-90,
+   
+    marginTop:-115,
+  
    
     
   },
+  
   contentShift: {
+    
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
+     
     }),
-    marginLeft: 216,
+    
+   background:"black",
+   opacity:"1"
+   
+      
 
    
   },
@@ -209,8 +217,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>  <Link style={{listStyle:"none",color:"black",fontSize:"16px",fontWeight:"bold"}} to ="/Register">Register</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose} > <Link style={{listStyle:"none",color:"black",fontSize:"16px",fontWeight:"bold"}} to ="/Login">Login</Link></MenuItem>
       
     </Menu>
   );
@@ -229,19 +237,12 @@ export default function PrimarySearchAppBar() {
      <MenuItem>
         <IconButton  color="inherit">
           <Badge color="secondary">
-         <MailIcon/>
+        <AccountBoxSharpIcon/>
           </Badge>
         </IconButton>
-        <p>Register</p>
+       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/">Profile</Link>
      </MenuItem>
-      <MenuItem>
-        <IconButton  color="inherit">
-          <Badge color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Login</p>
-      </MenuItem>
+     
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
@@ -251,20 +252,20 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <p>Join Now</p>
       </MenuItem>
     </Menu>
   );
 
   return (
-    <div className={classes.grow} >
+    <div style={{marginLeft:"-10px",marginTop:"-10px",width:"101.2%"}} className={classes.grow} >
       <AppBar  position="static" style={{ background: '#000000' }}
        className={clsx(classes.appBar, {
         [classes.appBarShift]: open,
       })}>
         <Toolbar>
          
-        <IconButton position="static" style={{marginLeft:"0px", marginBottom:"0px",width:"30px", height:"30px",background:"rgb(160, 39, 80)"}}
+        <IconButton position="static" style={{marginLeft:"0px", marginBottom:"0px",width:"30px", height:"30px",background:"rgb(141, 16, 16)"}}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -273,13 +274,24 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography style={{marginLeft:"200px",color:"rgb(160, 39, 80)",fontWeight:"bold",fontSize:"25px"}} className={classes.title} variant="h6" noWrap>
-            Red Handed 
+          <Typography style={{marginLeft:"200px",color:"rgb(141, 16, 16)",fontWeight:"bold",fontSize:"25px"}} className={classes.title} variant="h6" noWrap>
+           <img style={{marginTop:"10px", width:"50px",height:"50px",boxShadow:"0px 0px 2px 2px red"}} src="https://as1.ftcdn.net/v2/jpg/03/92/10/86/500_F_392108630_Zocs2zJa2VkVVM8EQBtYKxdqrkX9tdLI.jpg"></img>
           </Typography>
          
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <p style={{marginRight:"12px", fontSize:"18px",fontWeight:"bold",color:"rgb(141, 16, 16)"}}>Join Now</p>
+            </IconButton>
+          
           <IconButton  color="inherit">
               <Badge  color="secondary">
                <h6>Home</h6>
@@ -295,27 +307,15 @@ export default function PrimarySearchAppBar() {
                <h6>About Us</h6>
               </Badge>
             </IconButton>
+           
             <IconButton  color="inherit">
               <Badge  color="secondary">
-              <Link style={{listStyle:"none",color:"white",fontSize:"16px",fontWeight:"bold"}} to ="/Login">Login</Link>
+              <Link style={{textDecoration:"none",color:"white",fontSize:"16px",fontWeight:"bold"}} to ="/">Profile</Link>
               </Badge>
             </IconButton>
-            <IconButton  color="inherit">
-              <Badge  color="secondary">
-              <Link style={{listStyle:"none",color:"white",fontSize:"16px",fontWeight:"bold"}} to ="/Register">Register</Link>
-              </Badge>
-            </IconButton>
+           
           
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+           
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -335,6 +335,7 @@ export default function PrimarySearchAppBar() {
       {renderMenu}
       <Drawer
         className={classes.drawer}
+        style={{}}
         variant="persistent"
         anchor="left"
         open={open}
@@ -342,7 +343,7 @@ export default function PrimarySearchAppBar() {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
+        <div  className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
@@ -371,9 +372,9 @@ export default function PrimarySearchAppBar() {
           [classes.contentShift]: open,
         })}
       >
-        <div className={classes.drawerHeader} />
+        <div  className={classes.drawerHeader} />
       
-          <HomePage />
+         
       
       </main>
     </div>

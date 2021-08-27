@@ -7,11 +7,11 @@ const HomePage = (props) => {
     <>
 
     <div className="homecontainer">
-     
+     <div className="homepage">
   <Baner
         title="Red Handed"
  subtitle="AI invigilation"/>
-
+</div>
 </div>
   
    
