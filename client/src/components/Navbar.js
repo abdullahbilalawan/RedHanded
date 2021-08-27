@@ -176,6 +176,12 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  // LOGEGD IN information
+  var user_data = localStorage.getItem('user');
+  user_data = JSON.parse(user_data);
+  var username = user_data.username;
+  
   
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
