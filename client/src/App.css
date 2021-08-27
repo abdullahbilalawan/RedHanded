@@ -41,20 +41,20 @@
 .homecontainer {
   background-color: black;
   height:600px;
- width:75%;
+ width:102%;
  margin-left: -20px;
 
  
  
  
 }
-.homepage{
+/*.homepage{
   background-image: url(./images/bg.jpg);
   margin-left: 900px;
   width:27%;
   height:600px;
   
-}
+}*/
 
   
 /* Banner */
@@ -68,7 +68,7 @@
   letter-spacing: 3px;
   align-items: center;
   margin-top: 40px;
-  margin-left: 400px;
+  margin-left: 240px;
   height:200px;
   width:250px;
  
@@ -90,8 +90,65 @@
   
 
 }
+@media screen and (max-width: 1120px) {
+  .homecontainer{
+    width:102.2%;
+  }
+ 
+ 
+
+} 
+@media screen and (max-width: 890px) {
+  .homecontainer{
+    width:102.4%;
+  }
+ 
+ 
+
+} 
+@media screen and (max-width: 700px) {
+  .homecontainer{
+    width:102.6%;
+  }
+ 
+ 
+
+} 
+@media screen and (max-width: 610px) {
+  .homecontainer{
+    width:102.9%;
+  }
+ 
+ 
+
+} 
+@media screen and (max-width: 520px) {
+  .homecontainer{
+    width:103%;
+  }
+ 
+ 
+
+} 
+@media screen and (max-width: 470px) {
+  .homecontainer{
+    width:103.5%;
+  }
+ 
+ 
+
+} 
+@media screen and (max-width: 390px) {
+  .homecontainer{
+    width:103.9%;
+  }
+ 
+ 
+
+} 
 
 
+/*
 
 @media screen and (max-width: 1920px) {
   .homecontainer{
@@ -2082,7 +2139,7 @@
 } 
 @media screen and (max-width: 740px) {
   .homecontainer{
-    width:103.4%;
+    width:102.6%;
   }
   .banner{
     margin-left: -110px;
@@ -2099,7 +2156,7 @@
 } 
 @media screen and (max-width: 730px) {
   .homecontainer{
-    width:103.5%;
+    width:102.6%;
   }
   .banner{
     margin-left: -110px;
@@ -2116,7 +2173,7 @@
 } 
 @media screen and (max-width: 720px) {
   .homecontainer{
-    width:103.5%;
+    width:102.6%;
   }
   .banner{
     margin-left: -110px;
@@ -2132,7 +2189,7 @@
 } 
 @media screen and (max-width: 710px) {
   .homecontainer{
-    width:103.6%;
+    width:102.6%;
   }
   .banner{
     margin-left: -110px;
@@ -2148,14 +2205,14 @@
 } 
 @media screen and (max-width: 700px) {
   .homecontainer{
-    width:103.5%;
+    width:102.6%;
   }
   .banner{
     margin-left: -110px;
     margin-top: 80px;
   }
   .homepage{
-    width:50%;
+    width:51%;
    
   }
 
@@ -2164,14 +2221,14 @@
 } 
 @media screen and (max-width: 690px) {
   .homecontainer{
-    width:103.8%;
+    width:102.8%;
   }
   .banner{
     margin-left: -110px;
     margin-top: 80px;
   }
   .homepage{
-    width:49.4%;
+    width:49.8%;
    
   }
 
@@ -2180,14 +2237,14 @@
 } 
 @media screen and (max-width: 680px) {
   .homecontainer{
-    width:103.8%;
+    width:102.8%;
   }
   .banner{
     margin-left: -110px;
     margin-top: 80px;
   }
   .homepage{
-    width:48.5%;
+    width:48.9%;
    
   }
 
@@ -2196,14 +2253,14 @@
 } 
 @media screen and (max-width: 670px) {
   .homecontainer{
-    width:103.8%;
+    width:102.8%;
   }
   .banner{
     margin-left: -110px;
     margin-top: 80px;
   }
   .homepage{
-    width:47.8%;
+    width:48.1%;
     
   }
 
@@ -2212,14 +2269,14 @@
 } 
 @media screen and (max-width: 660px) {
   .homecontainer{
-    width:103%;
+    width:102.8%;
   }
   .banner{
     margin-left: -110px;
     margin-top: 80px;
   }
   .homepage{
-    width:47%;
+    width:48%;
  
   }
 
@@ -2228,14 +2285,14 @@
 } 
 @media screen and (max-width: 650px) {
   .homecontainer{
-    width:103.9%;
+    width:102.8%;
   }
   .banner{
     margin-left: -130px;
     margin-top: 80px;
   }
   .homepage{
-    width:45.7%;
+    width:46%;
     
   }
 
@@ -2244,14 +2301,14 @@
 } 
 @media screen and (max-width: 640px) {
   .homecontainer{
-    width:104%;
+    width:102.8%;
   }
   .banner{
     margin-left: -130px;
     margin-top: 80px;
   }
   .homepage{
-    width:45.1%;
+    width:45.5%;
     
   }
 
@@ -2260,14 +2317,14 @@
 } 
 @media screen and (max-width: 630px) {
   .homecontainer{
-    width: 104%;
+    width:102.8%;
   }
   .banner{
     margin-left: -130px;
     margin-top: 80px;
   }
   .homepage{
-    width:44.4%;
+    width:44.9%;
    
   }
 
@@ -2276,7 +2333,7 @@
 } 
 @media screen and (max-width: 620px) {
   .homecontainer{
-    width:104%;
+    width:103%;
   }
   .banner{
     margin-left: -130px;
@@ -2292,7 +2349,7 @@
 } 
 @media screen and (max-width: 610px) {
   .homecontainer{
-    width:105.7%;
+    width:103%;
   }
   .banner{
     margin-left: -130px;
@@ -2308,7 +2365,7 @@
 } 
 @media screen and (max-width: 600px) {
   .homecontainer{
-    width:104%;
+    width:103.1%;
    
   }
   .banner{
@@ -2327,7 +2384,7 @@
 } 
 @media screen and (max-width: 590px) {
   .homecontainer{
-    width:104.5%;
+    width:103.1%;
   }
   .banner{
     margin-left: -310px;
@@ -2346,7 +2403,7 @@
 } 
 @media screen and (max-width: 580px) {
   .homecontainer{
-    width:104%;
+    width:103.1%;
   }
   .banner{
     margin-left: -310px;
@@ -2364,7 +2421,7 @@
 } 
 @media screen and (max-width: 570px) {
   .homecontainer{
-    width:104.5%;
+    width:103.1%;
   }
   .banner{
     margin-left: -320px;
@@ -2390,7 +2447,7 @@
 } 
 @media screen and (max-width: 560px) {
   .homecontainer{
-    width:104.5%;
+    width:103.1%;
   }
   .banner{
     margin-left: -310px;
@@ -2407,7 +2464,7 @@
 } 
 @media screen and (max-width: 550px) {
   .homecontainer{
-    width:104.5%;
+    width:103.1%;
   }
   .banner{
     margin-left: -300px;
@@ -2424,7 +2481,7 @@
 } 
 @media screen and (max-width: 540px) {
   .homecontainer{
-    width:104.7%;
+    width:103.1%;
   }
   .banner{
     margin-left: -290px;
@@ -2438,14 +2495,14 @@
 
   @media screen and (max-width: 530px) {
     .homecontainer{
-      width:104.2%;
+      width:103.1%;
     }
     .banner{
       margin-left: -280px;
       margin-top: 80px;
     }
     .homepage{
-      width:51.1%;
+      width:51.5%;
       margin-left: 250px;
      
     }
@@ -2455,14 +2512,14 @@
   } 
   @media screen and (max-width: 520px) {
     .homecontainer{
-      width:105%;
+      width:103.2%;
     }
     .banner{
       margin-left: -277px;
       margin-top: 80px;
     }
     .homepage{
-      width:49.7%;
+      width:51%;
       margin-left: 250px;
     
     }
@@ -2472,14 +2529,14 @@
   } 
   @media screen and (max-width: 510px) {
     .homecontainer{
-      width:104.8%;
+      width:103.2%;
     }
     .banner{
       margin-left: -275px;
       margin-top: 80px;
     }
     .homepage{
-      width:55.5%;
+      width:55.8%;
       margin-left: 220px;
     
     }
@@ -2497,7 +2554,7 @@
       margin-top: 80px;
     }
     .homepage{
-      width:55.8%;
+      width:56.3%;
       margin-left: 220px;
      
     }
@@ -2514,7 +2571,7 @@
       margin-top: 80px;
     }
     .homepage{
-      width:56.7%;
+      width:57.1%;
       margin-left: 213px;
      
     }
@@ -2531,7 +2588,7 @@
       margin-top: 80px;
     }
     .homepage{
-      width:59.7%;
+      width:59.4%;
       margin-left: 196px;
      
     }
@@ -2814,3 +2871,4 @@
 } 
 
 
+*/

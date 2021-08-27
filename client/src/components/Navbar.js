@@ -217,8 +217,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>  <Link style={{listStyle:"none",color:"black",fontSize:"16px",fontWeight:"bold"}} to ="/Register">Register</Link></MenuItem>
-      <MenuItem onClick={handleMenuClose} > <Link style={{listStyle:"none",color:"black",fontSize:"16px",fontWeight:"bold"}} to ="/Login">Login</Link></MenuItem>
+     <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       
     </Menu>
   );
@@ -240,7 +240,15 @@ export default function PrimarySearchAppBar() {
         <AccountBoxSharpIcon/>
           </Badge>
         </IconButton>
-       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/">Profile</Link>
+       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/Registeration">Join Now</Link>
+     </MenuItem>
+     <MenuItem>
+        <IconButton  color="inherit">
+          <Badge color="secondary">
+        <AccountBoxSharpIcon/>
+          </Badge>
+        </IconButton>
+       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="Login">Login</Link>
      </MenuItem>
      
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -252,7 +260,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Join Now</p>
+        <p>Profile</p>
       </MenuItem>
     </Menu>
   );
@@ -274,22 +282,24 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography style={{marginLeft:"200px",color:"rgb(141, 16, 16)",fontWeight:"bold",fontSize:"25px"}} className={classes.title} variant="h6" noWrap>
-           <img style={{marginTop:"10px", width:"50px",height:"50px",boxShadow:"0px 0px 2px 2px red"}} src="https://as1.ftcdn.net/v2/jpg/03/92/10/86/500_F_392108630_Zocs2zJa2VkVVM8EQBtYKxdqrkX9tdLI.jpg"></img>
-          </Typography>
          
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <p style={{marginRight:"12px", fontSize:"18px",fontWeight:"bold",color:"rgb(141, 16, 16)"}}>Join Now</p>
+          <IconButton  color="inherit">
+              <Badge  color="secondary">
+              <p style={{marginLeft:"100px", marginRight:"165px",color:"rgb(141, 16, 16)",fontSize:"21px",fontWeight:"bold"}} >Red Handed</p>
+              </Badge>
+            </IconButton>
+          <IconButton  color="inherit">
+              <Badge  color="secondary">
+              <Link style={{textDecoration:"none",color:"rgb(141, 16, 16)",fontSize:"18px",fontWeight:"bold"}} to ="/">Join Now</Link>
+              </Badge>
+            </IconButton>
+            <IconButton  color="inherit">
+              <Badge  color="secondary">
+              <Link style={{textDecoration:"none",color:"rgb(141, 16, 16)",fontSize:"18px",fontWeight:"bold"}} to ="/">Login</Link>
+              </Badge>
             </IconButton>
           
           <IconButton  color="inherit">
@@ -302,17 +312,18 @@ export default function PrimarySearchAppBar() {
                <h6>Contact</h6>
               </Badge>
             </IconButton>
-            <IconButton  color="inherit">
-              <Badge  color="secondary">
-               <h6>About Us</h6>
-              </Badge>
-            </IconButton>
+            
+            <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
            
-            <IconButton  color="inherit">
-              <Badge  color="secondary">
-              <Link style={{textDecoration:"none",color:"white",fontSize:"16px",fontWeight:"bold"}} to ="/">Profile</Link>
-              </Badge>
-            </IconButton>
+          
            
           
            
