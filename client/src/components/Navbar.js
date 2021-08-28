@@ -177,10 +177,10 @@ export default function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  // LOGEGD IN information
+  /* LOGEGD IN information
   var user_data = localStorage.getItem('user');
   user_data = JSON.parse(user_data);
-  var username = user_data.username;
+  var username = user_data.username;*/
   
   
   const theme = useTheme();
@@ -272,14 +272,14 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <div style={{marginLeft:"-10px",marginTop:"-10px",width:"101.2%"}} className={classes.grow} >
+    <div style={{marginLeft:"-20px",marginTop:"-10px",width:"102.8%"}} className={classes.grow} >
       <AppBar  position="static" style={{ background: '#000000' }}
        className={clsx(classes.appBar, {
         [classes.appBarShift]: open,
       })}>
         <Toolbar>
          
-        <IconButton position="static" style={{marginLeft:"0px", marginBottom:"0px",width:"30px", height:"30px",background:"rgb(141, 16, 16)"}}
+        <IconButton position="static" style={{marginLeft:"-4px",marginTop:"6px", width:"20px", height:"15px"}}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -288,23 +288,25 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
+          <Typography style={{marginTop:"10px",fontFamily:"Hina Mincho", marginLeft:"20px", marginRight:"165px",color:"rgb(141, 16, 16)",fontSize:"27px",fontWeight:"bold"}} variant="h6" className={classes.title}>
+            RED HANDED
+          </Typography>
+         
          
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          
           <IconButton  color="inherit">
               <Badge  color="secondary">
-              <p style={{marginLeft:"100px", marginRight:"165px",color:"rgb(141, 16, 16)",fontSize:"21px",fontWeight:"bold"}} >Red Handed</p>
-              </Badge>
-            </IconButton>
-          <IconButton  color="inherit">
-              <Badge  color="secondary">
-              <Link style={{textDecoration:"none",color:"rgb(141, 16, 16)",fontSize:"18px",fontWeight:"bold"}} to ="/">Join Now</Link>
+            
+              <Link style={{display:"flex",alignItems:"center",justifyContent:"center",height:"36px",lineHeight:"0",
+               paddingTop:"0",paddingLeft:"1.0em",paddingRight:"1.0em", textDecoration:"none",background:"rgb(141, 16, 16)",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">Join Now</Link>
               </Badge>
             </IconButton>
             <IconButton  color="inherit">
               <Badge  color="secondary">
-              <Link style={{textDecoration:"none",color:"rgb(141, 16, 16)",fontSize:"18px",fontWeight:"bold"}} to ="/">Login</Link>
+              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">Login</Link>
               </Badge>
             </IconButton>
           

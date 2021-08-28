@@ -33,12 +33,15 @@ function App() {
       <Navbar/>
      
      
+     
+     
       
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Register" component={Register} />
         </Switch>
+        
       
     </div>
     </Router>
