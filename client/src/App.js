@@ -34,6 +34,8 @@ function App() {
       <Navbar/>
      
      
+     
+     
       
         <Switch>
           <Route exact path="/" component={Homepage} />
@@ -41,6 +43,7 @@ function App() {
           <Route exact path="/Register" component={Register} />
           <Route exact path="/uploadTest" component={Uploader} />
         </Switch>
+        
       
     </div>
     </Router>

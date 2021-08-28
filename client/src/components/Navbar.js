@@ -177,10 +177,10 @@ export default function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  // LOGEGD IN information
+  /* LOGEGD IN information
   var user_data = localStorage.getItem('user');
   user_data = JSON.parse(user_data);
-  var username = user_data.username;
+  var username = user_data.username;*/
   
   
   const theme = useTheme();
@@ -223,8 +223,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>  <Link style={{listStyle:"none",color:"black",fontSize:"16px",fontWeight:"bold"}} to ="/Register">Register</Link></MenuItem>
-      <MenuItem onClick={handleMenuClose} > <Link style={{listStyle:"none",color:"black",fontSize:"16px",fontWeight:"bold"}} to ="/Login">Login</Link></MenuItem>
+     <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       
     </Menu>
   );
@@ -246,7 +246,15 @@ export default function PrimarySearchAppBar() {
         <AccountBoxSharpIcon/>
           </Badge>
         </IconButton>
-       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/">Profile</Link>
+       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/Registeration">Join Now</Link>
+     </MenuItem>
+     <MenuItem>
+        <IconButton  color="inherit">
+          <Badge color="secondary">
+        <AccountBoxSharpIcon/>
+          </Badge>
+        </IconButton>
+       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="Login">Login</Link>
      </MenuItem>
      
       <MenuItem onClick={handleProfileMenuOpen}>
@@ -258,20 +266,20 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Join Now</p>
+        <p>Profile</p>
       </MenuItem>
     </Menu>
   );
 
   return (
-    <div style={{marginLeft:"-10px",marginTop:"-10px",width:"101.2%"}} className={classes.grow} >
+    <div style={{marginLeft:"-20px",marginTop:"-10px",width:"102.8%"}} className={classes.grow} >
       <AppBar  position="static" style={{ background: '#000000' }}
        className={clsx(classes.appBar, {
         [classes.appBarShift]: open,
       })}>
         <Toolbar>
          
-        <IconButton position="static" style={{marginLeft:"0px", marginBottom:"0px",width:"30px", height:"30px",background:"rgb(141, 16, 16)"}}
+        <IconButton position="static" style={{marginLeft:"-4px",marginTop:"6px", width:"20px", height:"15px"}}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -280,22 +288,26 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography style={{marginLeft:"200px",color:"rgb(141, 16, 16)",fontWeight:"bold",fontSize:"25px"}} className={classes.title} variant="h6" noWrap>
-           <img style={{marginTop:"10px", width:"50px",height:"50px",boxShadow:"0px 0px 2px 2px red"}} src="https://as1.ftcdn.net/v2/jpg/03/92/10/86/500_F_392108630_Zocs2zJa2VkVVM8EQBtYKxdqrkX9tdLI.jpg"></img>
+          <Typography style={{marginTop:"10px",fontFamily:"Hina Mincho", marginLeft:"20px", marginRight:"165px",color:"rgb(141, 16, 16)",fontSize:"27px",fontWeight:"bold"}} variant="h6" className={classes.title}>
+            RED HANDED
           </Typography>
+         
          
         
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <p style={{marginRight:"12px", fontSize:"18px",fontWeight:"bold",color:"rgb(141, 16, 16)"}}>Join Now</p>
+          
+          <IconButton  color="inherit">
+              <Badge  color="secondary">
+            
+              <Link style={{display:"flex",alignItems:"center",justifyContent:"center",height:"36px",lineHeight:"0",
+               paddingTop:"0",paddingLeft:"1.0em",paddingRight:"1.0em", textDecoration:"none",background:"rgb(141, 16, 16)",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">Join Now</Link>
+              </Badge>
+            </IconButton>
+            <IconButton  color="inherit">
+              <Badge  color="secondary">
+              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">Login</Link>
+              </Badge>
             </IconButton>
           
           <IconButton  color="inherit">
@@ -308,17 +320,18 @@ export default function PrimarySearchAppBar() {
                <h6>Contact</h6>
               </Badge>
             </IconButton>
-            <IconButton  color="inherit">
-              <Badge  color="secondary">
-               <h6>About Us</h6>
-              </Badge>
-            </IconButton>
+            
+            <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
            
-            <IconButton  color="inherit">
-              <Badge  color="secondary">
-              <Link style={{textDecoration:"none",color:"white",fontSize:"16px",fontWeight:"bold"}} to ="/">Profile</Link>
-              </Badge>
-            </IconButton>
+          
            
           
            

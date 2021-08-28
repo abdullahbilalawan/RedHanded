@@ -1,5 +1,5 @@
 import React from "react";
-import Baner from "./Baner";
+import Baner from "../components/Baner";
 
 const HomePage = (props) => {
   console.log.apply(props.history);
@@ -7,12 +7,12 @@ const HomePage = (props) => {
     <>
 
     <div className="homecontainer">
-     <div className="homepage">
-  <Baner
-        title="Red Handed"
- subtitle="AI invigilation"/>
+       
+      <h1>Red Handed</h1>
+      <div />
+      <h2>AI Invigilation</h2>
 </div>
-</div>
+
   
    
     

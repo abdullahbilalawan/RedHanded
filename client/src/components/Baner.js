@@ -1,14 +1,13 @@
-import React from "react";
+/*import React from "react";
 const Baner = ({ children, title, subtitle }) => {
   return (
     <div className="banner">
        <div />
       <h1>{title}</h1>
-     
-      <p>{subtitle}</p>
+     <p>{subtitle}</p>
       {children}
     </div>
   );
 };
 
-export default Baner;
+export default Baner;*/
