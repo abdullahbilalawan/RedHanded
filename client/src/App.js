@@ -7,7 +7,7 @@ import {history} from './helpers/history'
 
 import './App.css'
 import Typography from "@material-ui/core/Typography";
-import Homepage from "./pages/HomePage";
+import Homepage from "./pages/Homepage"
 import Navbar from "./components/Navbar";
 //import SideBar from "./components/SideBar";
 import Login from "./pages/Login";
@@ -31,7 +31,7 @@ function App() {
     <div>
    
       <Navbar/>
-     
+  
      
      
      

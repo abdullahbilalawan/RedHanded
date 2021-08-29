@@ -8,6 +8,7 @@
   
   body {
     font-family: acumin-pro, system-ui, sans-serif;
+    margin-top: 0px;
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -18,12 +19,13 @@
   }
   
   .footer {
+    
     display: flex;
     width:101.5%;
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
     color: black;
-    background-color:rgb(114, 107, 107);
+    background-color:rgb(141, 16, 16);
     border-top: 1px solid #e5e5e5;
    
   }
@@ -40,7 +42,7 @@
   .footer__logo {
     font-family: 'Pacifico', cursive;
     font-weight: 400;
-    color:rgb(141, 16, 16);
+    color:gray;
     font-size: 1.5rem;
     font-weight: bold;
   }
@@ -134,6 +136,12 @@
   .heart {
     color: #2f2f2f;
   }
+  @media screen and (max-width: 625px)  {
+   .footer__nav{
+     display: none;
+   }
+  }
+  
   
   @media screen and (min-width: 20.375em) and (max-width:62.375rem) {
     .legal .social-icons {

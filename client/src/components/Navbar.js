@@ -246,7 +246,7 @@ export default function PrimarySearchAppBar() {
         <AccountBoxSharpIcon/>
           </Badge>
         </IconButton>
-       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/Registeration">Join Now</Link>
+       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/Register">Join Now</Link>
      </MenuItem>
      <MenuItem>
         <IconButton  color="inherit">
@@ -279,7 +279,7 @@ export default function PrimarySearchAppBar() {
       })}>
         <Toolbar>
          
-        <IconButton position="static" style={{marginLeft:"-4px",marginTop:"6px", width:"20px", height:"15px"}}
+        <IconButton position="static" style={{marginLeft:"10px",marginTop:"6px", width:"30px", height:"30px",backgroundColor:"rgb(141, 16, 16)"}}
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -288,36 +288,39 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography style={{marginTop:"10px",fontFamily:"Hina Mincho", marginLeft:"20px", marginRight:"165px",color:"rgb(141, 16, 16)",fontSize:"27px",fontWeight:"bold"}} variant="h6" className={classes.title}>
-            RED HANDED
-          </Typography>
+         
          
          
         
           <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
+          <div style={{marginTop:"20px"}} className={classes.sectionDesktop}>
           
           <IconButton  color="inherit">
               <Badge  color="secondary">
             
               <Link style={{display:"flex",alignItems:"center",justifyContent:"center",height:"36px",lineHeight:"0",
-               paddingTop:"0",paddingLeft:"1.0em",paddingRight:"1.0em", textDecoration:"none",background:"rgb(141, 16, 16)",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">Join Now</Link>
+               paddingTop:"0",paddingLeft:"1.0em",paddingRight:"1.0em", textDecoration:"none",background:"rgb(141, 16, 16)",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/Register">Join Now</Link>
               </Badge>
             </IconButton>
             <IconButton  color="inherit">
               <Badge  color="secondary">
-              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">Login</Link>
+              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/Login">Login</Link>
+              </Badge>
+            </IconButton>
+            <IconButton  color="inherit">
+              <Badge  color="secondary">
+              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">UploadTest</Link>
               </Badge>
             </IconButton>
           
           <IconButton  color="inherit">
               <Badge  color="secondary">
-               <h6>Home</h6>
+              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">Home</Link>
               </Badge>
             </IconButton>
             <IconButton  color="inherit">
               <Badge  color="secondary">
-               <h6>Contact</h6>
+              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">ContactUs</Link>
               </Badge>
             </IconButton>
             
