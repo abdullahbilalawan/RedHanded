@@ -26,7 +26,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import HomePage  from '../pages/HomePage';
+import DescriptionIcon from '@material-ui/icons/Description';
 
 
 const drawerWidth = 240;
@@ -256,6 +256,16 @@ export default function PrimarySearchAppBar() {
         </IconButton>
        <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="Login">Login</Link>
      </MenuItem>
+     <MenuItem>
+        <IconButton  color="inherit">
+          <Badge color="secondary">
+            <DescriptionIcon/>
+       </Badge>
+        </IconButton>
+       <Link style={{listStyle:"none",color:"black",fontSize:"16px"}} to="/">UploadTest</Link>
+     </MenuItem>
+     
+
      
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton

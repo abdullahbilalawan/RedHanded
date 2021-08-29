@@ -6,7 +6,7 @@ import { Background } from 'tsparticles/Options/Classes/Background/Background';
 export default function Homepage() {
     return (
         <div  className="home">
-          <div className="maindiv">
+         
       
         <Particles
        
@@ -124,7 +124,7 @@ export default function Homepage() {
     
 
      />
-    
+         <div className="maindiv">
        <div className="div" >
      
        <h1>Red Handed</h1>
@@ -133,6 +133,7 @@ export default function Homepage() {
       </div>
       </div>
       </div>
+     
      
      
   
