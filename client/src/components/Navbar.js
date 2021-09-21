@@ -319,7 +319,7 @@ export default function PrimarySearchAppBar() {
             </IconButton>
             <IconButton  color="inherit">
               <Badge  color="secondary">
-              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/">UploadTest</Link>
+              <Link style={{ textDecoration:"none",color:"white",fontSize:"18px",fontWeight:"bold"}} to ="/uploadTest">UploadTest</Link>
               </Badge>
             </IconButton>
           

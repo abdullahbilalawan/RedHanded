@@ -4,6 +4,7 @@ const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 const routes = require("./routes");
 const cors = require("cors");
+const fileuploader = require("express-fileupload")
 // MONGODB CONNECTION
 var mongoose = require("mongoose");
 mongoose
@@ -24,6 +25,7 @@ mongoose
       );
       next();
     });
+    app.use(fileuploader())
     
     
     

@@ -7,7 +7,7 @@ import {history} from './helpers/history'
 
 import './App.css'
 import Typography from "@material-ui/core/Typography";
-import Homepage from "./pages/Homepage"
+
 import Navbar from "./components/Navbar";
 //import SideBar from "./components/SideBar";
 import Login from "./pages/Login";
@@ -15,6 +15,7 @@ import Register from "./pages/Register";
 import Uploader from './pages/uploadTest';
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
+import Homepage from './pages/HomePage'
 
 
 function App() {
@@ -32,11 +33,6 @@ function App() {
     <div>
    
       <Navbar/>
-  
-     
-     
-     
-      
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/Login" component={Login} />
